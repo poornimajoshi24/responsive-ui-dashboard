@@ -1,0 +1,316 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: whitesmoke;
+  height: 100%;
+  width: 100%;
+  background-color: #231f1f;
+  font-size: clamp(14px, 1.5vw, 18px);
+}
+
+@mixin flex-column($gap: 0rem) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+//responsive for 4K
+section {
+  max-width: 2000px; //2000px ki width content ki widthincrease hona band ho jayegi
+}
+
+main {
+  width: 100%;
+  @include flex-column(1rem);
+  align-items: center; //for responsivity of 4K
+
+  section.view1 {
+    width: 100%;
+    @include flex-column(1rem);
+    padding: 1rem;
+
+    .top {
+      height: 100%;
+      width: 100%;
+
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: 0.78rem;
+      }
+    }
+
+    .bottom {
+      display: flex;
+      flex-direction: column;
+      padding: 0.7rem 1rem;
+      width: 100%;
+      outline: none; //Browser ka default focus highlight hataata hai
+      border: none; //border gayab
+      border-radius: 0.78rem;
+      background-color: #292929;
+      gap: 2rem; //bottom k sabhi elements k beech mei 1.5rem ka gap aa jayega
+
+      .text {
+        @include flex-column(0.7rem);
+
+        h1 {
+          font-weight: 200;
+          font-size: 2.5rem;
+          text-transform: uppercase;
+        }
+
+        p {
+          font-weight: 100;
+          font-size: 1.25rem;
+          opacity: 0.6;
+          line-height: 1.5rem; //by defualt p ka line height 1 rem hoti hai
+          // ye p ki saari lines k beech mei gap de deti hai
+        }
+
+        button {
+          width: fit-content; //jitna ocntent hai sirf utna he box ka size rahega
+        }
+      }
+    }
+  }
+
+  section.view2 {
+    @include flex-column(1rem);
+    width: 100%;
+    padding: 1rem;
+
+    .top,
+    .bottom {
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+
+      .element {
+        text-align: center;
+        @include flex-column(0.2rem);
+
+        small {
+          opacity: 1;
+        }
+
+        h2 {
+          font-size: 3rem;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+
+  section.view3 {
+    width: 100%;
+    @include flex-column(1rem);
+    padding: 1rem;
+
+    .top {
+      width: 100%;
+
+      img {
+        width: 100%;
+        border-radius: 0.78rem;
+      }
+    }
+
+    .bottom {
+      display: flex;
+      flex-direction: column;
+      padding: 0.7rem 1rem;
+      width: 100%;
+      outline: none; //Browser ka default focus highlight hataata hai
+      border: none; //border gayab
+      border-radius: 0.78rem;
+      background-color: #292929;
+      gap: 2rem; //bottom k sabhi elements k beech mei 1.5rem ka gap aa jayega
+
+      .text {
+        @include flex-column(0.7rem);
+
+        h1 {
+          font-weight: 200;
+          font-size: 2.5rem;
+          text-transform: uppercase;
+        }
+
+        p {
+          font-weight: 100;
+          font-size: 1.25rem;
+          opacity: 0.6;
+          line-height: 1.5rem; //by defualt p ka line height 1 rem hoti hai
+          // ye p ki saari lines k beech mei gap de deti hai
+        }
+      }
+    }
+    //bottom k andar 3 p tags hain but unmein se sirf direct child vaale p pe property lagega
+    .bottom > p {
+      text-transform: uppercase;
+    }
+  }
+
+  section.view4 {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    // ---------- CARD BASE ----------
+    .card {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background-size: cover;
+      background-position: center;
+      border-radius: 0.7rem;
+      padding: 1rem;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    // ---------- CARD VARIANTS ----------
+    .card1 {
+      background-image: url("section4.jpg");
+    }
+
+    .card2 {
+      background-image: url("view4card2.jpg");
+    }
+
+    .card3 {
+      background-image: url("view4cardd3.jpg");
+    }
+
+    // ---------- TOP ICON ROW ----------
+    .top {
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
+    }
+
+    .icon {
+      width: fit-content;
+      padding: 0.5rem;
+      border-radius: 50%;
+      background-color: rgba(84, 84, 84, 0.375);
+      backdrop-filter: blur(5px);
+      border: 1px solid white;
+    }
+
+    // ---------- BOTTOM INFO ----------
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 1rem;
+
+      background-color: rgba(84, 84, 84, 0.375);
+      backdrop-filter: blur(5px);
+      border: 1px solid white;
+      border-radius: 0.7rem;
+
+      p {
+        margin: 0;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+//for responsivity of laptop
+//for laptop viewport
+@media (min-width: 900px) {
+  main {
+
+    // ---------- VIEW 1 ----------
+    section.view1 {
+      display: flex;
+      flex-direction: row;
+      padding: 1rem 4rem;
+
+      .top,
+      .bottom {
+        width: 50%;
+      }
+
+      .bottom {
+        padding: 3rem;
+        justify-content: space-between;
+
+        .text {
+          gap: 1.5rem;
+
+          h1 {
+            font-size: 3.5rem;
+          }
+
+          p {
+            width: 60%;
+            font-size: 1rem;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+
+    // ---------- VIEW 2 ----------
+    section.view2 {
+      display: flex;
+      flex-direction: row;
+      padding: 1rem 4rem;
+    }
+
+    // ---------- VIEW 3 ----------
+    section.view3 {
+      display: flex;
+      flex-direction: row-reverse;
+      padding: 1rem 4rem;
+
+      .top,
+      .bottom {
+        width: 50%;
+      }
+
+      .bottom {
+        padding: 3rem;
+        justify-content: space-between;
+
+        .text {
+          gap: 1.5rem;
+
+          h1 {
+            font-size: 3.5rem;
+          }
+
+          .paragraph {
+            display: flex;
+            gap: 2rem;
+
+            p {
+              width: 60%;
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    // ---------- VIEW 4 ----------
+    section.view4 {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+    }
+  }
+}
