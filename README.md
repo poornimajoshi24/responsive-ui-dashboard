@@ -27,3 +27,32 @@ This project demonstrates strong fundamentals in **layout design, SCSS architect
 
 
 
+---
+
+## 📱 Responsiveness
+
+The UI adapts seamlessly to:
+- Mobile devices
+- Tablets
+- Laptops
+- Large screens / 4K displays
+
+Media queries and flexible layouts are used to ensure consistent user experience across devices.
+
+---
+
+## 🎯 Purpose
+
+This project was built to:
+- Practice **responsive UI development**
+- Strengthen **SCSS concepts** like mixins, nesting, and modular styling
+- Showcase frontend skills for internships and learning purposes
+
+---
+
+## 📌 How to Run Locally
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/poornimajoshi24/responsive-ui-dashboard.git
+
