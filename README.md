@@ -13,7 +13,7 @@ This project demonstrates strong fundamentals in **layout design, SCSS architect
 - Modular SCSS with mixins and nesting
 - Clean and modern UI layout
 - Optimized flex-based layouts
-- Scalable structure for future components
+- Scalable structure for future compone
 
 ---
 
