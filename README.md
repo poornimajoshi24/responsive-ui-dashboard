@@ -50,9 +50,4 @@ This project was built to:
 
 ---
 
-## 📌 How to Run Locally
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/poornimajoshi24/responsive-ui-dashboard.git
 
