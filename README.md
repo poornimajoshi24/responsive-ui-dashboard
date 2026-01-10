@@ -1,4 +1,4 @@
-# Responsive UI Dashboard
+# Fully Responsive UI Dashboard
 
 A fully responsive and modern UI dashboard built using **HTML5** and **SCSS**, focused on clean layout, scalability, and smooth responsiveness across mobile, tablet, laptop, and 4K screens.
 
